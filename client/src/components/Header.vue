@@ -48,9 +48,10 @@
       }
     },
     methods: {
-      ...mapActions([
-        'randomizeStocks'
-      ]),
+      ...mapActions({
+        randomizeStocks: 'randomizeStocks',
+        fetchData: 'loadData'
+      }),
       endDay() {
         this.randomizeStocks();
       },
@@ -63,7 +64,7 @@
         axios.put('/data', data);
       },
       loadData() {
-        
+       this.fetchData(); 
       }
     }
   }
