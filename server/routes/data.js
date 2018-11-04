@@ -15,13 +15,13 @@ router.get('/', function(req, res){
 });
 
 router.put('/', function(req, res) {
-    Data.update({}, {
+    Data.findOneAndUpdate({}, {
         $set: {
             funds: req.body.funds,
             stockPortfolio: req.body.stockPortfolio,
             stocks: req.body.stocks
         }
-    }, {}, function(err, data) {
+    }, {new: true}, function(err, data) {
         if(err) {
             console.log(err);
             res.status(401).send(err);
