@@ -23,7 +23,7 @@
                     aria-expanded="false">Save & Load <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#" @click="saveData">Save Data</a></li>
-                <li><a href="#">Load Data</a></li>
+                <li><a href="#" @click="loadData">Load Data</a></li>
               </ul>
             </li>
           </ul>
@@ -61,6 +61,9 @@
           stocks: this.$store.getters.stocks
         }
         axios.put('/data', data);
+      },
+      loadData() {
+        
       }
     }
   }
