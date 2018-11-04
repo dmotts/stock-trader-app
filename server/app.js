@@ -5,7 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
+var dataRoute = require('./routes/data');
 var http = require('http');
 var path = require('path');
 var cors = require('cors');
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({origin: serverUrl + ':8081', }))
 
 app.get('/', routes);
-app.get('/users', user);
+app.get('/data', dataRoute);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
