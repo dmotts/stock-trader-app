@@ -10,8 +10,18 @@ var http = require('http');
 var path = require('path');
 var cors = require('cors');
 var serverUrl = require("../server-url");
+var mongoose = require("mongoose");
+var mongoDB = require("./database_config");
 
 var app = express();
+
+mongoose.connect(mongoDB, {useNewUrlParser: true});
+
+mongoose.Promise = global.Promise;
+
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // all environments
 app.set('port', process.env.PORT || 3000);
