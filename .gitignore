@@ -1,3 +1,6 @@
+server-url.js
+
 server/node_modules
+server/database_config.js
 
 client/node_modules
