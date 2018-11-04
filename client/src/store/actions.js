@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const loadData = ({commit}) => {
-    axios('/data')
+    axios.get('/data')
         .then(({data}) => {
             if (data) {
                 const stocks = data.stocks;
