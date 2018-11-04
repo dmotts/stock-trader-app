@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import axios from 'axios'
+import serverUrl from '../../server-url'
 
 import App from './App.vue'
 import { routes } from './routes';
 import store from './store/store';
+
+axios.defaults.baseURL = serverUrl;
 
 Vue.use(VueRouter);
 
